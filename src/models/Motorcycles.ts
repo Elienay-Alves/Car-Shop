@@ -1,8 +1,8 @@
 import { Schema, model as mongooseCreateModel } from 'mongoose';
-import { ICar } from '../interfaces/ICar';
+import { IMotorcycle } from '../interfaces/IMotorcycles';
 import db from './db';
 
-const mongooseCarSchema = new Schema<ICar>({
+const mongooseMotorcycleSchema = new Schema<IMotorcycle>({
   model: {
     type: String,
     required: true,
@@ -19,11 +19,11 @@ const mongooseCarSchema = new Schema<ICar>({
     type: Number,
     required: true,
   },
-  doorsQty: {
-    type: Number,
-    required: true,
+  category: {
+    type: String,
+    required: true, 
   },
-  seatsQty: {
+  engineCapacity: {
     type: Number,
     required: true,
   },
@@ -31,10 +31,10 @@ const mongooseCarSchema = new Schema<ICar>({
   versionKey: false,
 });
 
-class CarsModel extends db<ICar> {
-  constructor(model = mongooseCreateModel('Cars', mongooseCarSchema)) {
+class MotorcyclesModel extends db<IMotorcycle> {
+  constructor(model = mongooseCreateModel('Motorcycles', mongooseMotorcycleSchema)) {
     super(model);
   }
 }
 
-export default CarsModel;
+export default MotorcyclesModel;

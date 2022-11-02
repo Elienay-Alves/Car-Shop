@@ -5,7 +5,7 @@ import CarsM from '../../../models/Cars';
 import CarsS from '../../../services/Cars';
 import CarsC from '../../../controllers/Cars';
 import StatusCodes from '../../../utils/statusCodes';
-import { CAR, CAR_WITH_ID, updatedCar, updatedCarWithId } from '../../data';
+import { CAR, CAR_WITH_ID } from '../../data';
 const { expect } = chai;
 
 describe('Cars Controller', () => {
